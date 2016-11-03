@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 def versionPropsFile = file("version.properties")//引入文件
 Properties versionProps = new Properties()
 versionProps.load(new FileInputStream(versionPropsFile))//读取文件
+def buildVersion = versionProps["buildVersion"]
 
 android {
     compileSdkVersion versionProps["compileSdkVersion"].toInteger()
@@ -24,6 +25,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "com.android.support:support-v4:${versionProps["buildVersion"]}"
+    compile "com.android.support:support-v4:${buildVersion}"
     compile 'com.github.vcredit-zj:commons-langa:v3.4-1'
 }
