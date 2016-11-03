@@ -1,10 +1,12 @@
 package com.vcredit.zj.noplayer.global;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.multidex.MultiDexApplication;
 
+import com.tencent.bugly.crashreport.CrashReport;
 import com.vcredit.zj.noplayer.BuildConfig;
 import com.vcredit.zj.utils.CommonUtils;
 
@@ -26,6 +28,8 @@ public class App extends MultiDexApplication {
     }
 
     private Configuration config;
+
+    private String channel = "unknown";
 
     @Override
     public void onCreate() {
@@ -49,8 +53,13 @@ public class App extends MultiDexApplication {
     }
 
     private void initAppForMainProcess() {
+        Context applicationContext = getApplicationContext();
         //初始化EventBus
         EventBus.builder().throwSubscriberException(BuildConfig.DEBUG).logNoSubscriberMessages(BuildConfig.DEBUG).installDefaultEventBus();
+
+        //初始化Bugly
+        CrashReport.initCrashReport(applicationContext, "2df8640479", BuildConfig.DEBUG);
+        CrashReport.setAppChannel(applicationContext, channel);
     }
 
     @Override

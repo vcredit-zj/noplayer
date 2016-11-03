@@ -67,4 +67,5 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.1'
     compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.1'
 	compile 'com.kymjs.core:themvp:1.0.7'
+    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
 }
