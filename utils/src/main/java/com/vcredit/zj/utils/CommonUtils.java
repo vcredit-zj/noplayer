@@ -9,6 +9,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
@@ -144,6 +146,23 @@ public class CommonUtils {
             }
         }
         return false;
+    }
+
+    /**
+     * 检查是否有网络
+     */
+    public static boolean isNetworkAvailable(Context context)
+    {
+
+        NetworkInfo info = getNetworkInfo(context);
+        return info != null && info.isAvailable();
+    }
+
+    private static NetworkInfo getNetworkInfo(Context context)
+    {
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo();
     }
 
     /**
