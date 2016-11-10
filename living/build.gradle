@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
 
 
 def versionPropsFile = file("version.properties")//引入文件
@@ -20,7 +21,7 @@ android {
         multiDexEnabled true
 
         jackOptions{
-            enabled true
+            enabled false
         }
     }
 
@@ -56,5 +57,8 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.1'
     compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.1'
     compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
-    compile project(path: ':base')
+}
+
+retrolambda {
+    javaVersion JavaVersion.VERSION_1_7
 }

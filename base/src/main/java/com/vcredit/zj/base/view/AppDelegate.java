@@ -85,7 +85,7 @@ public abstract class AppDelegate implements IDelegate {
         return view;
     }
 
-    public <T extends View> T get(int id) {
+    public <T extends View> T $(int id) {
         return (T) bindView(id);
     }
 
@@ -94,7 +94,7 @@ public abstract class AppDelegate implements IDelegate {
             return;
         }
         for (int id : ids) {
-            get(id).setOnClickListener(listener);
+            $(id).setOnClickListener(listener);
         }
     }
 
