@@ -64,4 +64,6 @@ public abstract class App extends MultiDexApplication {
         res.updateConfiguration(config, res.getDisplayMetrics());
         return res;
     }
+
+
 }

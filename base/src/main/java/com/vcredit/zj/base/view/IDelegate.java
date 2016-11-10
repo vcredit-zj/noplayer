@@ -37,6 +37,8 @@ public interface IDelegate {
 
     View getRootView();
 
+    boolean isAttach();
+
     int getRootLayoutId();
 
     void initWidget();

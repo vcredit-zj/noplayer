@@ -17,11 +17,15 @@ public class LivingActivity extends ActivityPresenter<LivingDelegate> implements
     @Override
     protected void bindEvenListener() {
         super.bindEvenListener();
-        viewDelegate.setOnClickListener(this, R.id.text11111);
+        viewDelegate.setOnClickListener(this, R.id.jump);
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.jump:{
+                jumpTo(this, LivingDetailActivity.class);
+            }
+        }
     }
 }

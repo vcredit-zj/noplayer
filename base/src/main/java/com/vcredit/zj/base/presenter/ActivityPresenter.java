@@ -15,16 +15,28 @@
  */
 package com.vcredit.zj.base.presenter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.databinding.ViewDataBinding;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.vcredit.zj.base.R;
+import com.vcredit.zj.base.global.App;
 import com.vcredit.zj.base.view.IDelegate;
+
+import java.io.Serializable;
 
 
 /**
@@ -36,6 +48,8 @@ import com.vcredit.zj.base.view.IDelegate;
  */
 public abstract class ActivityPresenter<T extends IDelegate> extends RxAppCompatActivity {
     protected T viewDelegate;
+
+    private SlidrInterface attach;
 
     public ActivityPresenter() {
         try {
@@ -49,6 +63,7 @@ public abstract class ActivityPresenter<T extends IDelegate> extends RxAppCompat
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        initSlidr();
         super.onCreate(savedInstanceState);
         createBinding(getLayoutInflater(), null, savedInstanceState);
         setContentView(viewDelegate.getRootView());
@@ -62,6 +77,15 @@ public abstract class ActivityPresenter<T extends IDelegate> extends RxAppCompat
     }
 
     protected void bindEvenListener() {
+    }
+
+    protected void initSlidr() {
+        FrameLayout content = (FrameLayout)findViewById(android.R.id.content);
+        content.setBackgroundColor(getResources().getColor(R.color.activityBackground));
+
+        if (viewDelegate.isAttach()){
+            attach = Slidr.attach(this);
+        }
     }
 
     protected void initToolbar() {
@@ -98,7 +122,28 @@ public abstract class ActivityPresenter<T extends IDelegate> extends RxAppCompat
     protected void onDestroy() {
         super.onDestroy();
         viewDelegate = null;
+        attach = null;
+    }
+
+    @Override
+    public Resources getResources() {
+        return App.getInstance().getResources();
     }
 
     protected abstract Class<T> getDelegateClass();
+
+    protected static void jumpTo(Context packageContext, Class clazz){
+        Intent intent = new Intent();
+        intent.setClass(packageContext, clazz);
+        packageContext.startActivity(intent);
+    }
+
+    protected static void jumpTo(Context packageContext, Class clazz, String key, Serializable serializable){
+        Intent intent = new Intent();
+        intent.setClass(packageContext, clazz);
+        intent.putExtra(key, serializable);
+        packageContext.startActivity(intent);
+    }
+
+
 }

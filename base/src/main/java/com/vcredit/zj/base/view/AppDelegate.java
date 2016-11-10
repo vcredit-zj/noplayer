@@ -18,13 +18,19 @@ package com.vcredit.zj.base.view;
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
+
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+import com.vcredit.zj.base.R;
 
 /**
  * View delegate base class
@@ -71,6 +77,12 @@ public abstract class AppDelegate implements IDelegate {
     public void setRootView(View rootView) {
         this.rootView = rootView;
     }
+
+    /**
+     * 是否支持滑动返回
+     * @return
+     */
+    public boolean isAttach(){return false;}
 
     @Override
     public void initWidget() {
