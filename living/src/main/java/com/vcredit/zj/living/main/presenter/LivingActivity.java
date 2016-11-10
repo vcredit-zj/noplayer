@@ -1,6 +1,5 @@
 package com.vcredit.zj.living.main.presenter;
 
-import android.os.Bundle;
 import android.view.View;
 
 import com.vcredit.zj.base.presenter.ActivityPresenter;
