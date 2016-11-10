@@ -10,7 +10,7 @@ import com.vcredit.zj.living.R;
  * Created by shibenli on 2016/11/4.
  */
 
-public class LivingDelegate extends AppDelegate implements View.OnClickListener {
+public class LivingDelegate extends AppDelegate{
     @Override
     public int getRootLayoutId() {
         return R.layout.activity_living;
@@ -21,12 +21,5 @@ public class LivingDelegate extends AppDelegate implements View.OnClickListener 
         super.initWidget();
         TextView text = $(R.id.text11111);
         text.setText("hello");
-
-        setOnClickListener(this, R.id.text11111);
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 }

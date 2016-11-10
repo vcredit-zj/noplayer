@@ -1,12 +1,13 @@
 package com.vcredit.zj.living.main.presenter;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.vcredit.zj.base.presenter.ActivityPresenter;
 import com.vcredit.zj.living.R;
 import com.vcredit.zj.living.main.delegate.LivingDelegate;
 
-public class LivingActivity extends ActivityPresenter<LivingDelegate> {
+public class LivingActivity extends ActivityPresenter<LivingDelegate> implements View.OnClickListener{
 
     @Override
     protected Class getDelegateClass() {
@@ -14,7 +15,13 @@ public class LivingActivity extends ActivityPresenter<LivingDelegate> {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void bindEvenListener() {
+        super.bindEvenListener();
+        viewDelegate.setOnClickListener(this, R.id.text11111);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
