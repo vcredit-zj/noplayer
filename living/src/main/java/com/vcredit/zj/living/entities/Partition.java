@@ -5,8 +5,6 @@ import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.List;
 
-import kotlin.jvm.Volatile;
-
 /**
  * 项目名称：noplayer
  * 类描述：模块分类信息

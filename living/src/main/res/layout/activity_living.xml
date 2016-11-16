@@ -22,4 +22,11 @@
         android:layout_height="wrap_content"
         android:text="跳转"/>
 
+    <Button
+        android:id="@+id/get"
+        android:layout_below="@+id/jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get"/>
+
 </RelativeLayout>

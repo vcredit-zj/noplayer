@@ -2,6 +2,7 @@ package com.vcredit.zj.living.main.net;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.vcredit.zj.living.global.NoPlayerApp;
+import com.vcredit.zj.living.main.net.api.LivingService;
 import com.vcredit.zj.utils.CommonUtils;
 
 import java.io.File;
@@ -15,6 +16,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by shibenli on 2016/11/10.
@@ -87,6 +91,17 @@ public class NetHelper {
         }
     }
 
+    public static LivingService getLivingService(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(LIVE_BASE_URL)
+                .client(mOkHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+
+        return retrofit.create(LivingService.class);
+    }
+
     /**
      * 添加UA拦截器，B站请求API需要加上UA才能正常使用
      */
@@ -96,7 +111,6 @@ public class NetHelper {
         @Override
         public Response intercept(Chain chain) throws IOException
         {
-
             Request originalRequest = chain.request();
             Request requestWithUserAgent = originalRequest.newBuilder()
                     .removeHeader("User-Agent")
