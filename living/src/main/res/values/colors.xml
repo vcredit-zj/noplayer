@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="bg_3b">#3B3B3B</color>
+    <color name="bg_2c">#2C2C2C</color>
+
+
+
+    <!-- 字体 分割线等 黑 白 -->
+
+    <color name="font_f1">#F1F1F1</color>
+    <color name="font_a9">#A9A9A9</color>
+
+
+    <color name="font_black">#333</color>
+    <color name="font_dark_gray">@color/font_gray_66</color>
+    <color name="font_gray_66">#666666</color>
+    <color name="font_light_gray">#999</color>
+    <color name="font_green">#7bd024</color>
+    <color name="font_white">#fff</color>
+    <color name="font_hint_gray">#ccc</color>
+    <color name="divider_dash">#dddddd</color>
+    <color name="divider">@color/font_hint_gray</color>
+    <color name="divider_main_navigation">#60a8ee</color>
+    <color name="font_main_navigation">#60a8ee</color>
+    <color name="font_textview_btn">#60a8ee</color>
+    <color name="font_pay_title">#60a8ee</color>
+    <color name="img_si_border">#cccccc</color>
+    <color name="font_white_80">#80ffffff</color>
+    <color name="font_red_f56">#f56D6B</color>
+    <color name="font_red_ffa">#FFA94D</color>
+    <color name="font_green_ffa">#49D59B</color>
+    <color name="font_blue_cfe">#CFE5FA</color>
+    <color name="font_withe_eee">#EEEEEE</color>
+    <color name="bg_white">#FFFFFF</color>
+    <color name="devider_f2">#F2F2E9</color>
+
+    <!--按钮相关颜色-->
+    <color name="btn_enabele">#60a8ee</color>
+    <color name="btn_pressed">#4f99e1</color>
+    <color name="btn_disable">#ddd</color>
+    <color name="webview_btn_backgroud">#7fffffff</color>
+    <color name="pop_backgroud">#7f000000</color>
+
+    <color name="xlistview_foot_divider">#999</color>
+    <color name="list_item_backgroud">#ddd</color>
+    <color name="item_divider">#ddd</color>
+
+    <color name="progress_color">#FFA94D</color>
+    <color name="analyse_progress_color">#FDB96F</color>
+    <color name="round_color">#ddd</color>
+    <color name="round_text_color">@color/round_color</color>
+
+    <color name="icon_text_backgroud">#fff7ed</color>
+    <color name="info_text_backgroud">#fff6ed</color>
+    <color name="bill_null_text">#F56D6B</color>
+
+    <color name="message_time_bg">#D0D0D0</color>
+
+    <color name="city_tag_bg">#ededed</color>
+    <color name="city_bg">#ddd</color>
+
+
 </resources>

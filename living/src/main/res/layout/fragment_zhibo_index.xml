@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/convenientBanner"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/bg_white"
+        app:canLoop="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/bg_3b"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_zhibo_guanzhu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_title"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/zhibo_daohang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="关注主播" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_zhibo_zhongxin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@id/iv_title"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/zhibo_daohang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="直播中心" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_zhibo_sousuo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@id/iv_title"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/zhibo_daohang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="搜索直播" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_zhibo_fenlei"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@id/iv_title"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/zhibo_daohang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="直播分类" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ry_zhibo_list"
+        android:background="@color/bg_2c"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

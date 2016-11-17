@@ -51,15 +51,20 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':base')
     compile "com.android.support:appcompat-v7:${buildVersion}"
-
     compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
     compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.1'
     compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.1'
-    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
-
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
     compile 'com.facebook.stetho:stetho:1.3.1'
     compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    compile 'com.bigkoo:convenientbanner:2.0.5'
 }
 
 retrolambda {

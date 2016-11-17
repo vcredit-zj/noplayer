@@ -1,3 +1,18 @@
 <resources>
 
+    <style name="tv_25_a9">
+        <item name="android:textColor">@color/font_a9</item>
+        <item name="android:textSize">@dimen/fontSize_25</item>
+    </style>
+
+    <style name="tv_25_f1" parent="tv_25_a9">
+        <item name="android:textColor">@color/font_f1</item>
+    </style>
+
+    <!-- 直播首页下面的导航-->
+    <style name="zhibo_daohang">
+        <item name="android:textColor">@color/font_a9</item>
+        <item name="android:textSize">@dimen/fontSize_20</item>
+
+    </style>
 </resources>
